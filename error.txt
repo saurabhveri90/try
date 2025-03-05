@@ -1,0 +1,62 @@
+The error message indicates a Java version mismatch in your AEM project:
+
+Issue:
+The class file in com.adobe.cq.wcm.components.core-2.26.0.jar was compiled with Java version 55.0 (Java 11).
+Your current compiler is expecting Java 52.0 (Java 8).
+Solution:
+Option 1: Upgrade Java to 11
+Since the dependencies require Java 11, upgrade your Java version:
+
+Check your current Java version:
+sh
+Copy
+Edit
+java -version
+If it's Java 8, install Java 11 and set it as default:
+On Mac/Linux (using SDKMAN):
+sh
+Copy
+Edit
+sdk install java 11.0.20-amzn
+sdk use java 11.0.20-amzn
+On Windows:
+Download and install Java 11 from AdoptOpenJDK.
+Set JAVA_HOME to Java 11.
+Option 2: Use the Correct Dependency Version
+Check if you are using the right version of com.adobe.cq.wcm.components.core in your pom.xml:
+xml
+Copy
+Edit
+<dependency>
+    <groupId>com.adobe.cq.wcm</groupId>
+    <artifactId>core.wcm.components.core</artifactId>
+    <version>2.26.0</version>
+</dependency>
+If your project requires Java 8, downgrade this dependency to a compatible version.
+Option 3: Force Java 11 in pom.xml
+If you want to enforce Java 11 for compilation, update pom.xml:
+
+xml
+Copy
+Edit
+<properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+</properties>
+Final Steps
+Clean and rebuild the project:
+sh
+Copy
+Edit
+mvn clean install
+If the issue persists, delete the .m2 repository cache:
+sh
+Copy
+Edit
+rm -rf ~/.m2/repository/com/adobe/cq/wcm/components/core
+Then run:
+sh
+Copy
+Edit
+mvn clean install -U
+Try these steps and let me know if the issue still exists!
