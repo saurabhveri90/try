@@ -1,0 +1,161 @@
+C:\onevz-value-soe-aem2>mvn clean install
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] Value AEM                                                          [pom]
+[INFO] Value AEM - Core                                                   [jar]
+[INFO] Value AEM - UI Frontend                                            [pom]
+[INFO] Value AEM - Repository Structure Package               [content-package]
+[INFO] Value AEM - UI apps                                    [content-package]
+[INFO] Value AEM - UI content                                 [content-package]
+[INFO] Value AEM - UI config                                  [content-package]
+[INFO] Value AEM - All                                        [content-package]
+[INFO] Value AEM - Integration Tests                                      [jar]
+[INFO]
+[INFO] ------------------< com.verizon.value.aem:value-aem >-------------------
+[INFO] Building Value AEM 1.0.0-SNAPSHOT                                  [1/9]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- clean:3.0.0:clean (default-clean) @ value-aem ---
+[INFO]
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ value-aem ---
+[INFO]
+[INFO] --- install:2.5.2:install (default-install) @ value-aem ---
+[INFO] Installing C:\onevz-value-soe-aem2\pom.xml to C:\Users\agasa5w\.m2\repository\com\verizon\value\aem\value-aem\1.0.0-SNAPSHOT\value-aem-1.0.0-SNAPSHOT.pom
+[INFO]
+[INFO] ----------------< com.verizon.value.aem:value-aem.core >----------------
+[INFO] Building Value AEM - Core 1.0.0-SNAPSHOT                           [2/9]
+[INFO]   from core\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.0.0:clean (default-clean) @ value-aem.core ---
+[INFO] Deleting C:\onevz-value-soe-aem2\core\target
+[INFO]
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ value-aem.core ---
+[INFO]
+[INFO] --- resources:3.0.2:resources (default-resources) @ value-aem.core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\onevz-value-soe-aem2\core\src\main\resources
+[INFO]
+[INFO] --- compiler:3.8.1:compile (default-compile) @ value-aem.core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 43 source files to C:\onevz-value-soe-aem2\core\target\classes
+[INFO] /C:/onevz-value-soe-aem2/core/src/main/java/com/verizon/value/aem/core/models/DAMContentFragment.java: Some input files use or override a deprecated API.
+[INFO] /C:/onevz-value-soe-aem2/core/src/main/java/com/verizon/value/aem/core/models/DAMContentFragment.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/onevz-value-soe-aem2/core/src/main/java/com/verizon/value/aem/core/models/DAMContentFragment.java: Some input files use unchecked or unsafe operations.
+[INFO] /C:/onevz-value-soe-aem2/core/src/main/java/com/verizon/value/aem/core/models/DAMContentFragment.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- bnd:5.1.2:bnd-process (bnd-process) @ value-aem.core ---
+[WARNING] C:\onevz-value-soe-aem2\core\pom.xml [0:0]: Export com.verizon.value.aem.core.models,  has 1,  private references [com.verizon.value.aem.core.utils]
+[INFO]
+[INFO] --- resources:3.0.2:testResources (default-testResources) @ value-aem.core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\onevz-value-soe-aem2\core\src\test\resources
+[INFO]
+[INFO] --- compiler:3.8.1:testCompile (default-testCompile) @ value-aem.core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to C:\onevz-value-soe-aem2\core\target\test-classes
+[INFO]
+[INFO] --- surefire:2.22.1:test (default-test) @ value-aem.core ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.verizon.value.aem.core.filters.LoggingFilterTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/agasa5w/.m2/repository/uk/org/lidalia/slf4j-test/1.0.1/slf4j-test-1.0.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/agasa5w/.m2/repository/com/adobe/aem/uber-jar/6.5.21/uber-jar-6.5.21.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [uk.org.lidalia.slf4jtest.TestLoggerFactory]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.313 s - in com.verizon.value.aem.core.filters.LoggingFilterTest
+[INFO] Running com.verizon.value.aem.core.listeners.SimpleResourceListenerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.verizon.value.aem.core.listeners.SimpleResourceListenerTest
+[INFO] Running com.verizon.value.aem.core.models.HelloWorldModelTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 s - in com.verizon.value.aem.core.models.HelloWorldModelTest
+[INFO] Running com.verizon.value.aem.core.schedulers.SimpleScheduledTaskTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in com.verizon.value.aem.core.schedulers.SimpleScheduledTaskTest
+[INFO] Running com.verizon.value.aem.core.servlets.SimpleServletTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in com.verizon.value.aem.core.servlets.SimpleServletTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.1.2:jar (default-jar) @ value-aem.core ---
+[INFO] Building jar: C:\onevz-value-soe-aem2\core\target\value-aem.core-1.0.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- bnd-baseline:5.1.2:baseline (baseline) @ value-aem.core ---
+[INFO] Determining the baseline version for com.verizon.value.aem:value-aem.core:jar:(,1.0.0-SNAPSHOT) using repositories [adobe-public-releases (https://repo.adobe.com/nexus/content/groups/public, default, releases), central (https://repo.maven.apache.org/maven2, default, releases)]
+Downloading from central: https://repo.maven.apache.org/maven2/com/verizon/value/aem/value-aem.core/maven-metadata.xml
+[WARNING] Could not transfer metadata com.verizon.value.aem:value-aem.core/maven-metadata.xml from/to central (https://repo.maven.apache.org/maven2): Connection reset
+[INFO] The baseline version was found to be null
+[WARNING] No previous version of com.verizon.value.aem:value-aem.core:jar:1.0.0-SNAPSHOT could be found to baseline against
+[INFO]
+[INFO] --- install:2.5.2:install (default-install) @ value-aem.core ---
+[INFO] Installing C:\onevz-value-soe-aem2\core\target\value-aem.core-1.0.0-SNAPSHOT.jar to C:\Users\agasa5w\.m2\repository\com\verizon\value\aem\value-aem.core\1.0.0-SNAPSHOT\value-aem.core-1.0.0-SNAPSHOT.jar
+[INFO] Installing C:\onevz-value-soe-aem2\core\pom.xml to C:\Users\agasa5w\.m2\repository\com\verizon\value\aem\value-aem.core\1.0.0-SNAPSHOT\value-aem.core-1.0.0-SNAPSHOT.pom
+[INFO]
+[INFO] ------------< com.verizon.value.aem:value-aem.ui.frontend >-------------
+[INFO] Building Value AEM - UI Frontend 1.0.0-SNAPSHOT                    [3/9]
+[INFO]   from ui.frontend\pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- clean:3.0.0:clean (default-clean) @ value-aem.ui.frontend ---
+[INFO]
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ value-aem.ui.frontend ---
+[INFO]
+[INFO] --- frontend:1.12.0:install-node-and-npm (install node and npm) @ value-aem.ui.frontend ---
+[INFO] Node v16.17.0 is already installed.
+[INFO] NPM 8.15.0 is already installed.
+[INFO]
+[INFO] --- frontend:1.12.0:npm (npm ci) @ value-aem.ui.frontend ---
+[INFO] Running 'npm ci' in C:\onevz-value-soe-aem2\ui.frontend
+[INFO] npm WARN ERESOLVE overriding peer dependency
+[INFO] npm WARN While resolving: acorn-import-assertions@1.8.0
+[INFO] npm WARN Found: peer acorn@"^8" from the root project
+[INFO] npm WARN
+[INFO] npm WARN Could not resolve dependency:
+[INFO] npm WARN peer acorn@"^8" from the root project
+[INFO] npm ERR! code ECONNRESET
+[INFO] npm ERR! syscall read
+[INFO] npm ERR! errno ECONNRESET
+[INFO] npm ERR! network request to https://registry.npmjs.org/acorn failed, reason: read ECONNRESET
+[INFO] npm ERR! network This is a problem related to network connectivity.
+[INFO] npm ERR! network In most cases you are behind a proxy or have bad network settings.
+[INFO] npm ERR! network
+[INFO] npm ERR! network If you are behind a proxy, please make sure that the
+[INFO] npm ERR! network 'proxy' config is set properly.  See: 'npm help config'
+[INFO]
+[INFO] npm ERR! A complete log of this run can be found in:
+[INFO] npm ERR!     C:\Users\agasa5w\AppData\Local\npm-cache\_logs\2025-03-07T07_09_31_905Z-debug-0.log
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Value AEM 1.0.0-SNAPSHOT:
+[INFO]
+[INFO] Value AEM .......................................... SUCCESS [  0.775 s]
+[INFO] Value AEM - Core ................................... SUCCESS [ 12.232 s]
+[INFO] Value AEM - UI Frontend ............................ FAILURE [03:32 min]
+[INFO] Value AEM - Repository Structure Package ........... SKIPPED
+[INFO] Value AEM - UI apps ................................ SKIPPED
+[INFO] Value AEM - UI content ............................. SKIPPED
+[INFO] Value AEM - UI config .............................. SKIPPED
+[INFO] Value AEM - All .................................... SKIPPED
+[INFO] Value AEM - Integration Tests ...................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:47 min
+[INFO] Finished at: 2025-03-07T12:43:02+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.12.0:npm (npm ci) on project value-aem.ui.frontend: Failed to run task: 'npm ci' failed. org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1) -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :value-aem.ui.frontend
