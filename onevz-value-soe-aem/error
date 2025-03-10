@@ -1,0 +1,51 @@
+error'''
+
+
+Setting up AEM and installing modules locally involves several steps, including setting up a local AEM environment and deploying packages to it. Here’s a guide on how to do this:
+
+Step 1: Set Up a Local AEM Environment
+Install Java: Ensure Java is installed on your system. For AEM 6.5 and later, use Java JDK 11; for earlier versions, use JDK 816.
+
+Download AEM QuickStart Jar: Obtain the AEM QuickStart Jar and a license file from Adobe.
+
+Create Folder Structure: Organize your files as follows:
+
+text
+~/aem-sdk
+/author
+/publish
+Configure AEM Instances:
+
+Rename the QuickStart Jar to aem-author-p4502.jar and place it in the /author directory.
+
+Add the license.properties file to the /author directory.
+
+Repeat this process for the Publish instance (aem-publish-p4503.jar) in the /publish directory14.
+
+Start AEM Instances:
+
+Double-click the Jar files or use the command line to start the instances:
+
+bash
+java -jar aem-author-p4502.jar
+Step 2: Install Modules Locally
+Use Maven for Deployment: If you're using a Maven project, ensure you have the necessary profiles set up to deploy packages to your local AEM instance.
+
+Deploy Packages:
+
+Use Maven commands like mvn clean install -PautoInstallSinglePackage to deploy packages to your local AEM instance running on port 45025.
+
+Verify Deployment:
+
+Navigate to the AEM Package Manager (http://localhost:4502/crx/packmgr/index.jsp) to verify that packages have been installed correctly5.
+
+Example Commands
+Start AEM Author Instance:
+
+bash
+java -jar aem-author-p4502.jar
+Deploy Packages with Maven:
+
+bash
+mvn clean install -PautoInstallSinglePackage
+By following these steps, you can set up a local AEM environment and install modules locally, ensuring that your development environment is properly configured for AEM development.
