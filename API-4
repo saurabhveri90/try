@@ -1,0 +1,47 @@
+package com.pc.core.servlets;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletPaths;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.propertytypes.ServiceDescription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.servlet.Servlet;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+@Component(service = { Servlet.class })
+@SlingServletPaths("/bin/api/test")
+@ServiceDescription("Test api connection")
+public class PageArticleServlet extends SlingSafeMethodsServlet {
+	private final transient Logger logger = LoggerFactory.getLogger(getClass());
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp) throws IOException {
+		logger.info("Inside Servlet");
+		String str="";
+
+		try (CloseableHttpClient client = HttpClients.createDefault()) {
+			HttpGet getRequest = new HttpGet("uri");
+
+			HttpResponse response = client.execute(getRequest);
+			str=EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
+			logger.info("With concurrent azureResponse :: {}",str);
+
+		} catch (Exception e) {
+			logger.error("Exception occurred while fetching value of secret key :: {}",  e.getMessage());
+		}
+		logger.info("Response {}",str);
+		resp.getWriter().write("Hello world" +str);
+	}
+
+}
