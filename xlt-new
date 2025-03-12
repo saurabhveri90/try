@@ -1,0 +1,29 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model="com.verizon.value.aem.core.models.FaqsModel"
+     data-sly-test.hasContent="${!model.empty}">
+
+    <h3 style="text-align:center" data-sly-test="${model.title}">${model.title}</h3>
+
+    <div  class="accordion-container ${wcmmode.edit ? 'open-all' : ''}" >
+        <sly data-sly-list.faqs="${model.faqsList}">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    ${faqs.question}
+                    <span class="arrow">&#9654;</span>
+                </button>
+                <sly data-sly-set.resourceNode="answer${faqsList.count}"></sly>
+                <div class="accordion-content">
+                   <div data-sly-resource="${@path=resourceNode, resourceType='wcm/foundation/components/parsys'}"></div>
+                </div>
+            </div>
+        </sly>
+    </div>
+
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-faqs'}"/>
+
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.js @ categories='value.aem.faqs'}"></sly>
+    <sly data-sly-call="${clientlib.css @ categories='value.aem.faqs'}"></sly>
+</sly>
