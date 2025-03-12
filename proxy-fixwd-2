@@ -1,0 +1,50 @@
+re Git Proxy Settings (if applicable)
+If your settings are intended for Git as well (as they seem to be), you can set the Git proxy by running the following commands:
+
+bash
+Copy
+git config --global http.proxy http://desktop.proxy.vzwcorp.com:5150
+git config --global https.proxy http://desktop.proxy.vzwcorp.com:5150
+git config --global http.postBuffer 157286400
+git config --global http.proxy: Sets the HTTP proxy for Git.
+git config --global https.proxy: Sets the HTTPS proxy for Git.
+git config --global http.postBuffer: Sets the buffer size for Git's HTTP operations (important for larger repositories).
+3. Disabling SSL Verification for Git
+To disable SSL verification for Git, you can use the following command, which corresponds to the sslVerify = false setting from your configuration:
+
+bash
+Copy
+git config --global http.sslVerify false
+This command disables SSL verification, which could be necessary if the proxy you're using has issues with certificates.
+
+4. Verifying Proxy Configuration
+To check if the proxy has been set correctly for npm, run:
+
+bash
+Copy
+npm config list
+This will display the npm configuration, and you should see the proxy and https-proxy values set to http://desktop.proxy.vzwcorp.com:5150.
+
+To verify Git's proxy settings, run:
+
+bash
+Copy
+git config --global --list
+This will display Git's global configuration, and you should see the http.proxy, https.proxy, and http.sslVerify settings.
+
+5. Test the Connection
+Once the settings are in place, test whether the proxy is working by running an npm install or Git command.
+
+For npm:
+
+bash
+Copy
+npm install <package-name>
+For Git (if you're cloning a repository, for example):
+
+bash
+Copy
+git clone <repository-url>
+If everything is configured correctly, these commands should work through the proxy without encountering the ECONNRESET error.
+
+Let me know if you face any other issues!
