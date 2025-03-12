@@ -1,0 +1,66 @@
+[INFO] --- frontend:1.12.0:npm (npm ci) @ value-aem.ui.frontend ---
+[INFO] Running 'npm ci' in C:\onevz-value-soe-aem2\ui.frontend
+[INFO] npm WARN ERESOLVE overriding peer dependency
+[INFO] npm WARN While resolving: acorn-import-assertions@1.8.0
+[INFO] npm WARN Found: peer acorn@"^8" from the root project
+[INFO] npm WARN
+[INFO] npm WARN Could not resolve dependency:
+[INFO] npm WARN peer acorn@"^8" from the root project
+[INFO] npm ERR! code ECONNRESET
+[INFO] npm ERR! errno ECONNRESET
+[INFO] npm ERR! network request to https://registry.npmjs.org/acorn failed, reason: Client network socket disconnected before secure TLS connection was established
+[INFO] npm ERR! network This is a problem related to network connectivity.
+[INFO] npm ERR! network In most cases you are behind a proxy or have bad network settings.
+[INFO] npm ERR! network
+[INFO] npm ERR! network If you are behind a proxy, please make sure that the
+[INFO] npm ERR! network 'proxy' config is set properly.  See: 'npm help config'
+[INFO]
+[INFO] npm ERR! A complete log of this run can be found in:
+[INFO] npm ERR!     C:\Users\agasa5w\AppData\Local\npm-cache\_logs\2025-03-12T09_42_19_576Z-debug-0.log
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Value AEM 1.0.0-SNAPSHOT:
+[INFO]
+[INFO] Value AEM .......................................... SUCCESS [  0.825 s]
+[INFO] Value AEM - Core ................................... SUCCESS [ 11.124 s]
+[INFO] Value AEM - UI Frontend ............................ FAILURE [03:38 min]
+[INFO] Value AEM - Repository Structure Package ........... SKIPPED
+[INFO] Value AEM - UI apps ................................ SKIPPED
+[INFO] Value AEM - UI content ............................. SKIPPED
+[INFO] Value AEM - UI config .............................. SKIPPED
+[INFO] Value AEM - All .................................... SKIPPED
+[INFO] Value AEM - Integration Tests ...................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:55 min
+[INFO] Finished at: 2025-03-12T15:15:50+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.12.0:npm (npm ci) on project value-aem.ui.frontend: Failed to run task: 'npm ci' failed. org.apache.commons.exec.ExecuteException: Process exited with an error: 1 (Exit value: 1) -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :value-aem.ui.frontend
+
+
+
+[http]
+	proxy = http://desktop.proxy.vzwcorp.com:5150
+	sslVerify = false
+	postBuffer = 157286400
+[https]
+	proxy = http://desktop.proxy.vzwcorp.com:5150
+[credential "http://desktop.proxy.vzwcorp.com:5150"]
+	provider = generic
+
+
+
+ npm config get proxy
+https://desktop.proxy.vzwcorp.com:5150
+
+
+
