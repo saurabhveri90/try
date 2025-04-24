@@ -1,0 +1,39 @@
+FistMeeting summary AI-generated
+
+The meeting discussed the creation and management of content fragments in JSON format, focusing on ease of export, storage, and maintenance.
+
+Content fragment models will be built by the team, allowing for easy export in JSON format.
+Content fragments can be created by multiple teams, but should be stored in a repository to avoid conflicts.
+Ad hoc content changes can still be made in non-prod and directly updated in production, with tracking for accountability.
+The team discussed a simplified version of the JSON object structure for forms and components.
+They debated the placement of error messages and agreed to include them as part of the input object representation.
+They discussed the need for error codes in the VSP layer to handle specific errors.
+Content fragments can be grouped by type and represented with unique attributes for tagging and automation.
+The folder structure for storing content fragments is still being designed, but it will include brand and language.
+It is possible to have separate content fragments for different languages or maintain two sets of content for easier replacement.
+Content fragments are being created and authored to be used across multiple pages.
+Different components will be recreated in AEM as they are react code, not AM code.
+A generic form model is being created to aggregate atomic content fragments for reuse.
+Multiple records and content in different languages will be dynamically managed.
+Concerns about the performance impact of handling a large amount of content were addressed.
+Structuring content into JSON objects and using JSON parser checks for maintainability and error prevention were discussed.
+Technology changes are rare, so focus on authorable content for easy maintenance.
+Business team should identify areas needing frequent changes for authorable content.
+Urgency around AI technology release aligned with Verizon press release in June.
+Action items AI-generated
+
+Figure out a way to import the translated content fragments into the existing content fragments
+Create a repo for the content fragments
+Share the repo details with the team
+Finalize the generic model for the repo structure
+Discuss caching with multiple people
+Review the simplified JSON structure and provide feedback
+Share the latest version of the JSON with the team
+Determine if the current URL structure and folder structure will work for re-rendering and Ajax content
+Decide on whether to maintain separate content fragments for each brand or use brand overrides in AM content
+Check if GraphQL is installed on the BAU server and get approval to upgrade if necessary.
+Share the final JSON structure with Douglas Walsh for documentation (Douglas Walsh)
+Consider adding error messages under the input elements
+Implement a JSON parser check in the build job to ensure that all JSONs are properly compiled before passing through the build.
+Discuss the role of AM in the agent TKI project and understand the timeline and urgency (Pardhasaradhi Vemuri, Douglas Walsh)
+Determine if the national offers cards on the landing page are finalized and if they need to be built in AM or MFE (Pardhasaradhi Vemuri, Douglas Walsh)
